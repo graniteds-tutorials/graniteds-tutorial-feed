@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+           version="3.0">
+
+    <!-- tag::webxml-spring[] -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:application-context.xml</param-value>
+    </context-param>
+
+    <!-- Spring listeners -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+    </listener>
+    <!-- end::webxml-spring[] -->
+
+    <!-- tag::webxml-graniteds[] -->
+    <!-- GraniteDS listeners -->
+    <listener>
+        <listener-class>org.granite.config.GraniteConfigListener</listener-class> <!--1-->
+    </listener>
+
+    <!-- Servlet 3 Async Gravity servlet -->
+    <servlet>
+        <servlet-name>gravity</servlet-name>
+        <servlet-class>org.granite.gravity.servlet3.GravityAsyncServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+        <async-supported>true</async-supported>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>gravity</servlet-name>
+        <url-pattern>/gravityamf/*</url-pattern> <!--2-->
+    </servlet-mapping>
+    <!-- end::webxml-graniteds[] -->
+
+</web-app>

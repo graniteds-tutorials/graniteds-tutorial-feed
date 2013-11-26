@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="EntryPointsManager">
+    <entry_points version="2.0" />
+  </component>
+  <component name="IdProvider" IDEtalkID="2C1712ABB6FCEE063755BE8881CE9730" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/client-javafx/pom.xml" />
+        <option value="$PROJECT_DIR$/client-java/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/client-flex/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/server-cdi/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectResources">
+    <resource url="http://www.graniteds.org/public/dtd/3.0.0/granite-config-3.0.xsd" location="$USER_HOME$/.gradle/caches/artifacts-26/filestore/org.graniteds/granite-server-core/3.0.0.RC1/jar/c291f357257421c130767f5b7845a315eeca08d/granite-server-core-3.0.0.RC1.jar!/org/granite/config/granite-config-3.0.xsd" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="JDK 7" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
+

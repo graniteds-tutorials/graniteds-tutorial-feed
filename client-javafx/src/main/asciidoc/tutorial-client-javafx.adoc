@@ -1,0 +1,84 @@
+== The JavaFX client application
+:icons: font
+:rootdir: ../../../..
+:srcdir: {rootdir}/client-javafx/src
+
+== The Java client application
+:icons: font
+:rootdir: ../../../..
+:srcdir: {rootdir}/client-java/src
+
+The client application is a simple JavaFX application which will continuously consume messages from the server
+feed and display them on stock exchange-style blocks.
+It's a single main class which consists in 3 parts:
+
+. Bootstrap the GraniteDS container and configure the client components
+. Define the JavaFX UI
+. Define the callback for message reception
+
+Here is the source code for the first bootstrap/configuration part:
+
+[[client.destination]]
+[source,java,indent=0]
+.main/java/org/graniteds/tutorial/feed/client/FeedClient.java
+----
+include::{srcdir}/main/java/org/graniteds/tutorial/feed/client/FeedClient.java[tags=client-setup]
+----
+<1> Bootstrap the GraniteDS Tide context.
+<2> Configure a +ServerSession+ object in the context with the server url and context path.
+<3> Configure the +ServerSession+ with the package name of the entities that will be serialized (see <<client.generation,
+client generation>> below).
+<4> Start the server session, initializing all required resources.
+<5> Create a consumer for the topic named +feedTopic+ (see the server definiton <<server.destination,here>>)
+configured with a subtopic named +NASDAQ+ (same as server).
+
+Once configured, we can next setup and subscribe the message consumer:
+
+[source,java,indent=0]
+.main/java/org/graniteds/tutorial/feed/client/FeedClient.java
+----
+include::{srcdir}/main/java/org/graniteds/tutorial/feed/client/FeedClient.java[tags=client-consume]
+----
+<1> We add a message listener on the +Consumer+ object which simply writes the incoming messages on the system output.
+<2> We subscribe the consumer to the server topic. Note that +Consumer.subscribe()+ is asynchronous so we are using +get()+
+to synchronously wait for the result.
+
+The UI is a simple JavaFX panel and has no dependency or specific requirement to work with GraniteDS. It contains a
+title and a tile pane to which +StockPriceView+ components will be added when the first price values are received:
+
+[source,java,indent=0]
+.main/java/org/graniteds/tutorial/feed/client/FeedClient.java
+----
+include::{srcdir}/main/java/org/graniteds/tutorial/feed/client/FeedClient.java[tags=client-ui]
+----
+
+[[client.generation]]
+The messages which are received contain arrays of +StockPrice+ objects. This class is generated from the server model class
+in a different package. In this case, this seems rather useless to have two different classes and not a single value object
+but it's just for demonstration purposes (and obviously directly using the server model classes from the client would work fine).
+However in more complex cases such as JPA entities, it can be very useful to be able to completely decouple the server
+and client classes.
+
+The client model class is generated using the GDS +ant+ task named +gfx+ (Generate JavaFX). Here is the relevant part of the
++pom.xml+:
+
+[source,xml,indent=0]
+.client-java/pom.xml
+----
+<plugins>
+    <plugin>
+include::https://raw.github.com/graniteds-tutorials/graniteds-tutorial/master/client-javafx/pom.xml[tags=maven-generate]
+    ...
+    </plugin>
+</plugins>
+----
+
+If you have a look at the generated class, you can see the +@RemoteAlias+ annotation which makes the link between the client
+and server class names.
+
+Finally, here are the maven dependencies for the Java module:
+[source,xml,indent=0]
+----
+include::https://raw.github.com/graniteds-tutorials/graniteds-tutorial/master/client-java-base/pom.xml[tags=maven-deps]
+include::https://raw.github.com/graniteds-tutorials/graniteds-tutorial/master/client-java-base/client-javafx/pom.xml[tags=maven-deps]
+----

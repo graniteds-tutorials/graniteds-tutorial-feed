@@ -1,0 +1,45 @@
+= GraniteDS Feed Tutorial
+
+This tutorial shows how to build a simple chat application where the clients and server communicate
+using a GraniteDS long polling channel.
+
+== How to use this tutorial
+
+GraniteDS integrates various client and server technologies, thus its actual use somehow depends on which of 
+these technologies you will be using.
+This tutorial includes most of the combinations supported by GraniteDS, so first you will have to build and
+generate the documentation for your technologies of choice.
+
+You will need a few tools to use this tutorial:
+
+- A Git client
+- JDK 7: http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html[(download here)]
+- Maven 3: http://maven.apache.org/download.cgi[(download here)]
+
+The first step is to clone this git repository from the command line:
+
+----
+git clone http://github.com/graniteds/graniteds-tutorial-chat.git
+----
+
+Next +cd+ in the tutorial folder and build the project and tutorial document:
+
+----
+cd graniteds-tutorial-chat
+
+mvn clean install asciidoctor:process-asciidoc -Dserver=servlet3 -Dclient=java
+----
+
+The available options for the server are:
+
+* servlet3
+* spring
+
+The available options for the client are:
+
+* java
+* javafx
+* flex
+* air
+
+Then you can follow the instructions in the tutorial document generated in +target/docs/graniteds-tutorial-chat.html+.

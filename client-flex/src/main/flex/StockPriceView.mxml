@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+
+<mx:Grid xmlns:fx="http://ns.adobe.com/mxml/2009"
+        xmlns:mx="library://ns.adobe.com/flex/mx"
+        xmlns:s="library://ns.adobe.com/flex/spark"
+        width="145" height="95" paddingBottom="10" paddingTop="10" paddingLeft="10" paddingRight="10"
+        horizontalAlign="center" verticalAlign="middle" borderColor="#97b54b" borderStyle="solid" horizontalGap="10">
+
+    <fx:Script>
+        <![CDATA[
+        import org.granite.math.BigDecimal;
+        import org.granite.math.RoundingMode;
+
+        import spark.formatters.CurrencyFormatter;
+        import spark.formatters.NumberFormatter;
+
+        [Bindable]
+        public var stockName:String;
+        public var initialPrice:BigDecimal;
+
+        private static var BD100:BigDecimal = new BigDecimal(100);
+
+        public function updatePrice(price:BigDecimal):void {
+            priceLabel.text = "$" + pFormat.format(price.toNumber());
+
+            var percent:BigDecimal = price.subtract(initialPrice).multiply(BD100).divide(initialPrice, 2, RoundingMode.CEILING);
+            percentLabel.text = (percent.compareTo(BigDecimal.ZERO) > 0 ? "+" : "") + pFormat.format(percent.toNumber()) + "%";
+            if (price.compareTo(initialPrice) > 0) {
+                percentLabel.setStyle("color", "green");
+                arrowLabel.setStyle("color", "green");
+                arrowLabel.text = "\uf139";
+            }
+            else if (price.compareTo(initialPrice) < 0) {
+                percentLabel.setStyle("color", "red");
+                arrowLabel.setStyle("color", "red");
+                arrowLabel.text = "\uf13a";
+            }
+            else {
+                percentLabel.setStyle("color", "black");
+                arrowLabel.setStyle("color", "black");
+                arrowLabel.text = "\uf138";
+            }
+        }
+        ]]>
+    </fx:Script>
+
+    <fx:Declarations>
+        <s:NumberFormatter id="pFormat" fractionalDigits="2"/>
+    </fx:Declarations>
+
+    <mx:GridRow>
+        <mx:GridItem colSpan="2">
+            <s:Label id="nameLabel" width="100%" verticalAlign="middle" textAlign="center"
+                    fontFamily="Tahoma" fontWeight="bold" fontSize="28" text="{stockName}"/>
+        </mx:GridItem>
+    </mx:GridRow>
+
+    <mx:GridRow>
+        <mx:GridItem width="60">
+            <s:Label id="priceLabel" width="100%" verticalAlign="middle" textAlign="center"
+                     fontFamily="Tahoma" fontSize="14"/>
+        </mx:GridItem>
+
+        <mx:GridItem width="40" rowSpan="2">
+            <s:Label id="arrowLabel" width="100%" verticalAlign="middle" textAlign="center"
+                     fontFamily="FontAwesome" fontSize="24"
+                     text="\uf138"/>
+        </mx:GridItem>
+    </mx:GridRow>
+
+    <mx:GridRow>
+        <mx:GridItem width="60">
+            <s:Label id="percentLabel" width="100%" verticalAlign="middle" textAlign="center"
+                     fontFamily="Tahoma" fontSize="14"
+                    text=" 0.00%"/>
+        </mx:GridItem>
+    </mx:GridRow>
+</mx:Grid>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- tag::namespace[] -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xmlns:graniteds="http://www.graniteds.org/config"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context.xsd
+            http://www.springframework.org/schema/task
+            http://www.springframework.org/schema/task/spring-task.xsd
+            http://www.graniteds.org/config
+            http://www.graniteds.org/public/dtd/3.0.0/granite-config-3.0.xsd">
+    <!-- end::namespace[] -->
+
+    <!-- tag::graniteds-config[] -->
+    <graniteds:server-filter useBigDecimal="true"/>
+    <!-- end::graniteds-config[] -->
+
+    <!-- tag::messaging-destination[] -->
+    <graniteds:messaging-destination id="feedTopic"/>
+    <!-- end::messaging-destination[] -->
+
+    <!-- tag::scheduling-config[] -->
+    <context:component-scan base-package="org.graniteds.tutorial.feed.server"/>
+
+    <task:scheduler id="taskScheduler" pool-size="1"/>
+    <task:annotation-driven scheduler="taskScheduler"/>
+    <!-- end::scheduling-config[] -->
+
+</beans>

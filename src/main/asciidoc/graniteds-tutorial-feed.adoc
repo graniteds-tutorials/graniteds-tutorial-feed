@@ -1,0 +1,139 @@
+:rootdir: ../../..
+
+= GraniteDS Feed Tutorial
+
+This tutorial shows how to build a simple server feed application where the server publishes information to all
+subscribed clients using a GraniteDS long polling channel.
+
+If you are looking at this document in html format, you have likely already built the project.
+
+In any other case, you can build it with:
+
+[subs="verbatim,attributes"]
+----
+mvn clean install -Dserver={server} -Dclient={client}
+
+mvn asciidoctor:process-asciidoc -Dserver={server} -Dclient={client}
+----
+
+You can open the project in your preferred IDE to browse the source code conveniently.
+Eclipse and IntelliJ IDEA project files are provided, other IDEs such as NetBeans are usually able to directly import Maven projects.
+
+NOTE: The provided Eclipse project files require the M2E plugin to manage Maven dependencies.
+
+ifeval::["{client}" == "flex"]
+NOTE: Using Flash Builder is recommended if you want to import the Flex module in Eclipse.
+
+NOTE: The compilation in Flash Builder uses an Eclipse path variable named +M2_REPO+ which should point to your Maven local repository (usually +{user.home}/.m2/repository+).
+It can be set in the main menu _Workspace > Preferences_, then _General > Workspace > Linked Resources_.
+endif::[]
+ifeval::["{client}" == "air"]
+NOTE: Using Flash Builder is recommended if you want to import the Flex module in Eclipse.
+
+NOTE: The compilation in Flash Builder uses an Eclipse path variable named +M2_REPO+ which should point to your Maven local repository (usually +{user.home}/.m2/repository+).
+It can be set in the main menu _Workspace -> Preferences_, then _General > Workspace > Linked Resources_.
+endif::[]
+
+ifeval::["{client}" == "javafx"]
+NOTE: The compilation of the JavaFX project in Eclipse requires adding the +jfxrt.jar+ library to the classpath. The provided project expects a 
+variable named +JFX_LIB+ which should point to this library and which can be set in the main menu _Workspace > Preferences_, then _Java > Build Path > Variables_.
+Alternatively you can simply add manually the library to the project classpath or add it to the JDK library itself.
+endif::[]
+
+To start the server, open a new console in the folder +server-{server}+ and start one of the available Maven
+embedded server configurations:
+
+[subs="verbatim,attributes"]
+----
+cd server-{server}
+----
+
+ifeval::["{server}" == "spring"]
+.Tomcat 7
+----
+mvn tomcat7:run-war
+----
+endif::[]
+
+.JBoss AS 7.1
+----
+mvn jboss-as:run
+----
+
+.GlassFish 3.1.2.2
+----
+mvn embedded-glassfish:run
+----
+
+.Apache TomEE 1.5
+----
+mvn tomee:run
+----
+
+ifeval::["{client}" == "java"]
+To launch the client, open a new console in the +client-java+ folder and launch the application jar file:
+
+----
+cd client-java
+
+java -jar target/feed.jar
+----
+
+This client is not interactive and continuously publishes messages to the chat room.
+You should see some logs and the following output:
+----
+------------------
+AAPL: $113.94
+GOOG: $101.47
+MSFT: $53.05
+AMZN: $101.47
+------------------
+AAPL: $114.40
+GOOG: $101.43
+MSFT: $52.92
+AMZN: $101.02
+------------------
+AAPL: $114.36
+GOOG: $101.90
+MSFT: $52.97
+AMZN: $100.55
+------------------
+AAPL: $113.94
+GOOG: $101.70
+MSFT: $52.55
+AMZN: $100.97...
+----
+endif::[]
+
+ifeval::["{client}" == "javafx"]
+Before launching the JavaFX client, it is first necessary to build a proper executable jar with the http://zenjava.com/javafx/maven/[Zenjava JavaFX plugin]:
+
+----
+cd client-javafx
+
+mvn jfx:jar
+
+java -jar target/jfx/app/feed.jar
+----
+endif::[]
+
+ifeval::["{client}" == "flex"]
+To run the Flex client, browse http://localhost:8080/feed/feed.swf[^]
+endif::[]
+
+ifeval::["{client}" == "air"]
+Install and run the +.air+ package built in +target/feed.air+.
+endif::[]
+
+NOTE: To run the tutorial for another combination of client and server technologies, redo everything from the start
+with the corresponding +client+ and +server+ arguments, so you get the correct tutorial document.
+
+As this is a server-to-client messaging application, you can of course start multiple clients at once and check that
+messages are received by all of them.
+
+Now let's have a look at the various interesting code and configuration elements of the server and the client
+applications.
+
+include::{rootdir}/server-{server}/src/main/asciidoc/tutorial-server-{server}.adoc[]
+
+include::{rootdir}/client-{client}/src/main/asciidoc/tutorial-client-{client}.adoc[]

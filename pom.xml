@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  GRANITE DATA SERVICES
+  Copyright (C) 2013 GRANITE DATA SERVICES S.A.S.
+
+  This file is part of Granite Data Services.
+
+  Granite Data Services is free software; you can redistribute it and/or modify
+  it under the terms of the GNU Lesser General Public License as published by
+  the Free Software Foundation; either version 3 of the License, or (at your
+  option) any later version.
+
+  Granite Data Services is distributed in the hope that it will be useful, but
+  WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+  FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License
+  for more details.
+
+  You should have received a copy of the GNU Lesser General Public License
+  along with this library; if not, see <http://www.gnu.org/licenses/>.
+-->
+
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" 
+    xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.graniteds.tutorials</groupId>
+        <artifactId>tutorial-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>tutorial-feed</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>GraniteDS Feed Tutorial</name>
+
+    <properties>
+        <app.name>feed</app.name>
+
+        <rootdir>${basedir}</rootdir>
+    </properties>
+
+    <modules>
+        <module>server-model</module>
+    </modules>
+
+    <profiles>
+        <profile>
+            <id>client-java</id>
+            <activation>
+                <property>
+                    <name>client</name>
+                    <value>java</value>
+                </property>
+            </activation>
+            <modules>
+                <module>client-java</module>
+            </modules>
+        </profile>
+
+        <profile>
+            <id>client-javafx</id>
+            <activation>
+                <property>
+                    <name>client</name>
+                    <value>javafx</value>
+                </property>
+            </activation>
+            <modules>
+                <module>client-javafx</module>
+            </modules>
+        </profile>
+
+        <profile>
+            <id>client-flex</id>
+            <activation>
+                <property>
+                    <name>client</name>
+                    <value>flex</value>
+                </property>
+            </activation>
+            <modules>
+                <module>client-flex</module>
+            </modules>
+        </profile>
+
+        <profile>
+            <id>client-air</id>
+            <activation>
+                <property>
+                    <name>client</name>
+                    <value>air</value>
+                </property>
+            </activation>
+            <modules>
+                <module>client-air</module>
+            </modules>
+        </profile>
+
+        <profile>
+            <id>server-ejb</id>
+            <activation>
+                <property>
+                    <name>server</name>
+                    <value>ejb</value>
+                </property>
+            </activation>
+            <modules>
+                <module>server-ejb</module>
+            </modules>
+        </profile>
+
+        <profile>
+            <id>server-cdi</id>
+            <activation>
+                <property>
+                    <name>server</name>
+                    <value>cdi</value>
+                </property>
+            </activation>
+            <modules>
+                <module>server-cdi</module>
+            </modules>
+        </profile>
+
+        <profile>
+            <id>server-spring</id>
+            <activation>
+                <property>
+                    <name>server</name>
+                    <value>spring</value>
+                </property>
+            </activation>
+            <modules>
+                <module>server-spring</module>
+            </modules>
+        </profile>
+    </profiles>
+</project>

@@ -1,0 +1,39 @@
+== The EJB server application
+:icons: font
+:rootdir: ../../../..
+:srcdir: {rootdir}/server-ejb/src
+
+The server application is basically a simple EJB application exposing a messaging destination and publishing stock price
+objects from a scheduled method.
+
+The necessary configuration for GraniteDS is very simple and consists in adding an annotated configuration class to
+trigger the startup of GraniteDS (using a Servlet 3 container initializer behind the scenes):
+
+[[server.config]]
+[[server.destination]]
+[source,java,indent=0]
+.main/java/org/graniteds/tutorial/feed/server/FeedApplication.java
+----
+include::{srcdir}/main/java/org/graniteds/tutorial/feed/server/FeedApplication.java[tags=server-filter]
+----
+<1> The +ServerFilter+ annotation triggers GraniteDS initialization. Note the use of the property +useBigDecimal+ to tell
+GDS that it should serialize +BigDecimal+ as is and not convert them to doubles so there is no loss of precision during
+the transfer.
+<2> The property +feedTopic+ annotated with +MessagingDestination+ indicates that we want to setup a messaging destination
+with the name of the property. See the client usage <<client.destination,here>>.
+
+The publisher is a simple singleton EJB. It gets a reference to the main +Gravity+ publishing component with +@EJB+:
+[source,java,indent=0]
+.main/java/org/graniteds/tutorial/feed/server/StockFeedPublisher.java
+----
+include::{srcdir}/main/java/org/graniteds/tutorial/feed/server/StockFeedPublisher.java[tags=inject-gravity]
+----
+
+It can then publish messages using this +Gravity+ component from a scheduled method:
+[source,java,indent=0]
+.main/java/org/graniteds/tutorial/feed/server/StockFeedPublisher.java
+----
+include::{srcdir}/main/java/org/graniteds/tutorial/feed/server/StockFeedPublisher.java[tags=server-publish]
+----
+<1> The server app has to create an +AsyncMessage+ and populate it with the necessary information (destination, subtopic, body)
+to send it. The destination and subtopic should match what the client has subscribed.

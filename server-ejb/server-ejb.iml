@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_6" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/target/classes" />
+    <output-test url="file://$MODULE_DIR$/target/test-classes" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/target/generated-sources" isTestSource="false" generated="true" />
+      <excludeFolder url="file://$MODULE_DIR$/target/apache-tomee" />
+      <excludeFolder url="file://$MODULE_DIR$/target/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/target/feed" />
+      <excludeFolder url="file://$MODULE_DIR$/target/jboss-as-run" />
+      <excludeFolder url="file://$MODULE_DIR$/target/maven-archiver" />
+      <excludeFolder url="file://$MODULE_DIR$/target/surefire" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="commons-logging-1.1.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="junit-4.11" level="project" />
+    <orderEntry type="library" scope="TEST" name="hamcrest-core-1.3" level="project" />
+    <orderEntry type="module" module-name="server-model" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.jboss.spec.javax.ejb:jboss-ejb-api_3.1_spec:1.0.2.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.graniteds:granite-server-ejb:3.0.0.SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.graniteds:granite-server:3.0.0.SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.graniteds:granite-server-jetty6:3.0.0.SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.graniteds:granite-server-glassfishv2:3.0.0.SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.graniteds:granite-server-activemq:3.0.0.SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.graniteds:granite-server-servlet3:3.0.0.SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.graniteds:granite-server-jboss:3.0.0.SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.graniteds:granite-server-tomcat7:3.0.0.SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.graniteds:granite-server-glassfishv3:3.0.0.SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.graniteds:granite-server-jetty8:3.0.0.SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.graniteds:granite-server-weblogic:3.0.0.SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.graniteds:granite-server-tomcat6:3.0.0.SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: org.graniteds:granite-server-core:3.0.0.SNAPSHOT" level="project" />
+  </component>
+</module>
+

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+
+<application xmlns="http://ns.adobe.com/air/application/2.6">
+    <id>org.graniteds.tutorial.feed</id>
+    <filename>feed</filename>
+    <name>GraniteDS Feed Tutorial</name>
+    <versionNumber>1.0.0</versionNumber>
+	
+    <initialWindow>
+        <title>GraniteDS Feed Tutorial</title>
+        <content>feed.swf</content>
+        <width>320</width>
+        <height>300</height>
+        <visible>true</visible>
+    </initialWindow>
+</application>

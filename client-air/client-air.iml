@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="Flex" version="4">
+  <component name="FlexBuildConfigurationManager" active="client-air">
+    <configurations>
+      <configuration name="client-air" target-platform="Desktop" main-class="feed" output-file="feed.swf" output-folder="$MODULE_DIR$/target">
+        <dependencies>
+          <entries>
+            <entry library-id="55b3fb96-4873-4f0f-aec6-428fb4609ad2">
+              <dependency linkage="Include" />
+            </entry>
+            <entry library-id="591d9d46-0ae7-4dc5-bbef-0f1ebe253658">
+              <dependency linkage="Merged" />
+            </entry>
+          </entries>
+          <sdk name="Flex SDK 4.5" />
+        </dependencies>
+        <compiler-options>
+          <map>
+            <entry key="compiler.locale" value="en_US" />
+          </map>
+        </compiler-options>
+        <packaging-air-desktop package-file-name="feed" />
+        <packaging-android />
+        <packaging-ios />
+      </configuration>
+    </configurations>
+    <compiler-options />
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/target/classes" />
+    <output-test url="file://$MODULE_DIR$/target/test-classes" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/main/flex" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/target/generated-sources" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/target/air" />
+      <excludeFolder url="file://$MODULE_DIR$/target/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/target/surefire-reports" />
+    </content>
+    <orderEntry type="jdk" jdkName="Flex SDK 4.5" jdkType="Flex SDK Type (new)" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="55b3fb96-4873-4f0f-aec6-428fb4609ad2" />
+        <CLASSES>
+          <root url="jar://$MAVEN_REPOSITORY$/org/graniteds/granite-client-flex/3.0.0.SNAPSHOT/granite-client-flex-3.0.0.SNAPSHOT.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="591d9d46-0ae7-4dc5-bbef-0f1ebe253658" />
+        <CLASSES>
+          <root url="jar://$MAVEN_REPOSITORY$/org/graniteds/granite-client-flex45-advanced/3.0.0.SNAPSHOT/granite-client-flex45-advanced-3.0.0.SNAPSHOT.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+  </component>
+</module>
+
