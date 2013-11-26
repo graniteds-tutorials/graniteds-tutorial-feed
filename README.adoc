@@ -1,6 +1,6 @@
 = GraniteDS Feed Tutorial
 
-This tutorial shows how to build a simple chat application where the clients and server communicate
+This tutorial shows how to build a simple server feed application where the clients receive random stock prices
 using a GraniteDS long polling channel.
 
 == How to use this tutorial
@@ -19,20 +19,21 @@ You will need a few tools to use this tutorial:
 The first step is to clone this git repository from the command line:
 
 ----
-git clone http://github.com/graniteds/graniteds-tutorial-chat.git
+git clone http://github.com/graniteds/graniteds-tutorial-feed.git
 ----
 
 Next +cd+ in the tutorial folder and build the project and tutorial document:
 
 ----
-cd graniteds-tutorial-chat
+cd graniteds-tutorial-feed
 
-mvn clean install asciidoctor:process-asciidoc -Dserver=servlet3 -Dclient=java
+mvn clean install asciidoctor:process-asciidoc -Dserver=spring -Dclient=java
 ----
 
 The available options for the server are:
 
-* servlet3
+* ejb
+* cdi
 * spring
 
 The available options for the client are:
@@ -42,4 +43,4 @@ The available options for the client are:
 * flex
 * air
 
-Then you can follow the instructions in the tutorial document generated in +target/docs/graniteds-tutorial-chat.html+.
+Then you can follow the instructions in the tutorial document generated in +target/docs/graniteds-tutorial-feed.html+.
