@@ -4,7 +4,6 @@ import flex.messaging.messages.AsyncMessage;
 import org.granite.ejb.Gravity;
 import org.graniteds.tutorial.feed.entities.StockPrice;
 
-import javax.annotation.Resource;
 import javax.ejb.EJB;
 import javax.ejb.Schedule;
 import javax.ejb.Singleton;

@@ -16,9 +16,9 @@ trigger the startup of GraniteDS (using a Servlet 3 container initializer behind
 ----
 include::{srcdir}/main/java/org/graniteds/tutorial/feed/server/FeedApplication.java[tags=server-filter]
 ----
-<1> The +ServerFilter+ annotation triggers GraniteDS initialization. Note the use of the property +useBigDecimal+ to tell
-GDS that it should serialize +BigDecimal+ as is and not convert them to doubles so there is no loss of precision during
-the transfer.
+<1> The +ServerFilter+ annotation triggers GraniteDS initialization with an EJB configuration. Note the use of the
+property +useBigDecimal+ to tell GDS that it should serialize +BigDecimal+ as is and not convert them to doubles so
+there is no loss of precision during the transfer.
 <2> The property +feedTopic+ annotated with +MessagingDestination+ indicates that we want to setup a messaging destination
 with the name of the property. See the client usage <<client.destination,here>>.
 

@@ -14,9 +14,9 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/client-air/pom.xml" />
         <option value="$PROJECT_DIR$/client-flex/pom.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/server-cdi/pom.xml" />
       </set>
     </option>
   </component>
