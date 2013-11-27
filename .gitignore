@@ -4,4 +4,5 @@ bin/
 bin-debug/
 build/
 .idea/workspace.xml
+*.log
 

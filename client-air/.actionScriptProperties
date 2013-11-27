@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<actionScriptProperties analytics="false" mainApplicationPath="helloworld.mxml" projectUUID="55d00282-bce4-405b-8465-f5e103850f13" version="10">
+<actionScriptProperties analytics="false" mainApplicationPath="feed.mxml" projectUUID="55d00282-bce4-405b-8465-f5e103850f13" version="10">
   <compiler additionalCompilerArguments="-locale en_US -include-libraries ${M2_REPO}\org\graniteds\granite-client-flex\3.0.0.SNAPSHOT\granite-client-flex-3.0.0.SNAPSHOT.swc" autoRSLOrdering="true" copyDependentFiles="true" fteInMXComponents="false" generateAccessible="true" htmlExpressInstall="true" htmlGenerate="true" htmlHistoryManagement="true" htmlPlayerVersionCheck="true" includeNetmonSwc="false" outputFolderPath="bin-debug" removeUnusedRSL="true" sourceFolderPath="src/main/flex" strict="true" targetPlayerVersion="0.0.0" useApolloConfig="false" useDebugRSLSwfs="true" verifyDigests="true" warn="true">
-    <compilerSourcePath/>
+    <compilerSourcePath>
+      <compilerSourcePathEntry kind="1" linkType="1" path="target/generated-sources"/>
+    </compilerSourcePath>
     <libraryPath defaultLinkType="0">
       <libraryPathEntry kind="4" path="">
         <excludedEntries>
@@ -15,7 +17,7 @@
     <sourceAttachmentPath/>
   </compiler>
   <applications>
-    <application path="helloworld.mxml">
+    <application path="feed.mxml">
       <airExcludes/>
     </application>
   </applications>

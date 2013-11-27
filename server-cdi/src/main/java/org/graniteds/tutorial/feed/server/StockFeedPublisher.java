@@ -1,17 +1,17 @@
 package org.graniteds.tutorial.feed.server;
 
-import flex.messaging.messages.AsyncMessage;
+import java.math.BigDecimal;
+import java.util.Random;
+
+import javax.ejb.Schedule;
+import javax.ejb.Singleton;
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
+
 import org.granite.gravity.Gravity;
 import org.graniteds.tutorial.feed.entities.StockPrice;
 
-import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
-import javax.ejb.Schedule;
-import javax.ejb.Singleton;
-import java.lang.Override;
-import java.math.BigDecimal;
-import java.util.Random;
+import flex.messaging.messages.AsyncMessage;
 
 @ApplicationScoped @Singleton
 public class StockFeedPublisher {

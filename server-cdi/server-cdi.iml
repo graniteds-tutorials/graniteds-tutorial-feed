@@ -12,6 +12,7 @@
       <excludeFolder url="file://$MODULE_DIR$/target/jboss-as-run" />
       <excludeFolder url="file://$MODULE_DIR$/target/maven-archiver" />
       <excludeFolder url="file://$MODULE_DIR$/target/surefire" />
+      <excludeFolder url="file://$MODULE_DIR$/target/test-classes" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -25,17 +26,6 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.inject:javax.inject:1" level="project" />
     <orderEntry type="library" name="Maven: org.graniteds:granite-server-cdi:3.0.0.SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.graniteds:granite-server:3.0.0.SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.graniteds:granite-server-jetty6:3.0.0.SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.graniteds:granite-server-glassfishv2:3.0.0.SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.graniteds:granite-server-activemq:3.0.0.SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.graniteds:granite-server-servlet3:3.0.0.SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.graniteds:granite-server-jboss:3.0.0.SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.graniteds:granite-server-tomcat7:3.0.0.SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.graniteds:granite-server-glassfishv3:3.0.0.SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.graniteds:granite-server-jetty8:3.0.0.SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.graniteds:granite-server-weblogic:3.0.0.SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.graniteds:granite-server-tomcat6:3.0.0.SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.graniteds:granite-server-core:3.0.0.SNAPSHOT" level="project" />
   </component>
 </module>
 
