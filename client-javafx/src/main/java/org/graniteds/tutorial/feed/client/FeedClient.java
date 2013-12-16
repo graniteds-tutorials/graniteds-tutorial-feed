@@ -32,10 +32,11 @@ public class FeedClient extends Application {
         Application.launch(FeedClient.class, args);
     }
 
+    final static Context context = new SimpleContextManager(new JavaFXApplication()).getContext(); // <1>
+
     @Override
     public void start(Stage stage) throws Exception {
         // tag::client-setup[]
-        final Context context = new SimpleContextManager(new JavaFXApplication()).getContext(); // <1>
         final ServerSession serverSession = context.set(
                 new ServerSession("/feed", "localhost", 8080)); // <2>
         serverSession.addRemoteAliasPackage("org.graniteds.tutorial.feed.client"); // <3>
@@ -94,21 +95,14 @@ public class FeedClient extends Application {
 
         feedConsumer.subscribe().get(); // <4>
         // end::client-consume[]
-
-        // tag::client-close[]
-        stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
-            @Override
-            public void handle(WindowEvent windowEvent) {
-                try {
-                    serverSession.stop();
-                }
-                catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-        // end::client-close[]
     }
 
+    // tag::client-close[]
+    @Override
+    public void stop() throws Exception {
+        context.byType(ServerSession.class).stop();
 
+        super.stop();
+    }
+    // end::client-close[]
 }
