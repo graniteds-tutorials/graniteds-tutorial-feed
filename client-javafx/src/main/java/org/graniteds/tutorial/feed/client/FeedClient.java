@@ -2,7 +2,6 @@ package org.graniteds.tutorial.feed.client;
 
 import javafx.application.Application;
 import javafx.application.Platform;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
@@ -13,7 +12,6 @@ import javafx.scene.layout.TilePane;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 import org.granite.client.javafx.tide.JavaFXApplication;
 import org.granite.client.messaging.Consumer;
 import org.granite.client.messaging.TopicMessageListener;

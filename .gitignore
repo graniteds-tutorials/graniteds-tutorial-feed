@@ -4,5 +4,7 @@ bin/
 bin-debug/
 build/
 .idea/workspace.xml
-*.log
-
+*/.settings/com.springsource*
+*/.settings/gradle/
+*/.settings/org.eclipse.wst*
+*/.settings/.jsdt*
