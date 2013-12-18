@@ -19,7 +19,7 @@ You will need a few tools to use this tutorial:
 The first step is to clone this git repository from the command line:
 
 ----
-git clone http://github.com/graniteds/graniteds-tutorial-feed.git
+git clone http://github.com/graniteds-tutorials/graniteds-tutorial-feed.git
 ----
 
 Next +cd+ in the tutorial folder and build the project and tutorial document:
