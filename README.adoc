@@ -44,7 +44,7 @@ The available options for the client are:
 * air
 
 
-All available builds are listed below:
+All available builds for this tutorial are listed below:
 
 ===== Headless Java Client (command line)
 
