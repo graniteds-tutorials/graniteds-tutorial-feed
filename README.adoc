@@ -12,9 +12,9 @@ generate the documentation for your technologies of choice.
 
 You will need a few tools to use this tutorial:
 
-- A Git client
-- JDK 7: http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html[(download here)]
-- Maven 3: http://maven.apache.org/download.cgi[(download here)]
+- A Git client (http://git-scm.com/downloads[download here]),
+- JDK 7 (http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html[download here]),
+- Maven 3 (http://maven.apache.org/download.cgi[download here]).
 
 The first step is to clone this git repository from the command line:
 
@@ -32,9 +32,9 @@ mvn clean install asciidoctor:process-asciidoc -Dserver=spring -Dclient=java
 
 The available options for the server are:
 
+* spring
 * ejb
 * cdi
-* spring
 
 The available options for the client are:
 
@@ -43,4 +43,41 @@ The available options for the client are:
 * flex
 * air
 
-Then you can follow the instructions in the tutorial document generated in +target/docs/graniteds-tutorial-feed.html+.
+
+All available builds are listed below:
+
+===== Headless Java Client (command line)
+
+----
+mvn clean install asciidoctor:process-asciidoc -Dserver=spring -Dclient=java
+mvn clean install asciidoctor:process-asciidoc -Dserver=ejb -Dclient=java
+mvn clean install asciidoctor:process-asciidoc -Dserver=cdi -Dclient=java
+----
+
+===== JavaFX Client
+
+----
+mvn clean install asciidoctor:process-asciidoc -Dserver=spring -Dclient=javafx
+mvn clean install asciidoctor:process-asciidoc -Dserver=ejb -Dclient=javafx
+mvn clean install asciidoctor:process-asciidoc -Dserver=cdi -Dclient=javafx
+----
+
+===== Flex Client
+
+----
+mvn clean install asciidoctor:process-asciidoc -Dserver=spring -Dclient=flex
+mvn clean install asciidoctor:process-asciidoc -Dserver=ejb -Dclient=flex
+mvn clean install asciidoctor:process-asciidoc -Dserver=cdi -Dclient=flex
+----
+
+===== Air Client
+
+----
+mvn clean install asciidoctor:process-asciidoc -Dserver=spring -Dclient=air
+mvn clean install asciidoctor:process-asciidoc -Dserver=ejb -Dclient=air
+mvn clean install asciidoctor:process-asciidoc -Dserver=cdi -Dclient=air
+----
+
+Each time you launch one of the above build, a dedicated documentation is generated in
++target/docs/graniteds-tutorial-helloworld.html+. Refer to this document to know how to run the sample application
+and how its source code is designed.
