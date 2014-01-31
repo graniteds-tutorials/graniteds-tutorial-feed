@@ -7,4 +7,6 @@ build/
 */.settings/com.springsource*
 */.settings/gradle/
 */.settings/org.eclipse.wst*
+*/.settings/org.eclipse.jdt*
 */.settings/.jsdt*
+*.versionsBackup
