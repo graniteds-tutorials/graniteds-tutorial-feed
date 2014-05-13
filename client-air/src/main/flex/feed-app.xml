@@ -4,7 +4,7 @@
     <id>org.graniteds.tutorial.feed</id>
     <filename>feed</filename>
     <name>GraniteDS Feed Tutorial</name>
-    <versionNumber>1.0.0</versionNumber>
+    <versionNumber>3.0.4</versionNumber>
 	
     <initialWindow>
         <title>GraniteDS Feed Tutorial</title>
