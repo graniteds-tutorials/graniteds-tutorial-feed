@@ -9,12 +9,12 @@
     <parent>
         <groupId>org.graniteds.tutorials</groupId>
         <artifactId>tutorial-parent-client-flex</artifactId>
-        <version>3.0.3.GA</version>
+        <version>3.0.4.GA</version>
     </parent>
 	
     <artifactId>tutorial-feed-client-air</artifactId>
     <packaging>swf</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>3.0.4.GA</version>
     <name>GraniteDS Feed Tutorial - AIR Client</name>
 
     <properties>
@@ -28,7 +28,7 @@
         <dependency>
             <groupId>org.graniteds.tutorials</groupId>
             <artifactId>tutorial-feed-server-model</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>3.0.4.GA</version>
         </dependency>
     </dependencies>
     <!-- end::maven-gen-dep[] -->

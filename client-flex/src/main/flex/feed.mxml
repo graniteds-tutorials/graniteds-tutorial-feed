@@ -20,6 +20,7 @@
         import org.granite.gravity.Consumer;
         import org.granite.tide.service.ServerSession;
         import org.granite.tide.spring.Spring;
+        import org.granite.tide.service.SimpleServerApp;
         import org.graniteds.tutorial.feed.entities.StockPrice;
 
         private var feedConsumer:Consumer;
@@ -30,7 +31,8 @@
 
         private function init():void {
             Spring.getInstance().initApplication(); // <1>
-
+            Spring.getInstance().mainServerSession.serverApp = new SimpleServerApp();
+			
             feedConsumer = serverSession.getConsumer("feedTopic", "NASDAQ"); // <2>
 
             feedConsumer.subscribe(); // <3>
