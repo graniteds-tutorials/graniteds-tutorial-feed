@@ -25,11 +25,11 @@
     <parent>
         <groupId>org.graniteds.tutorials</groupId>
         <artifactId>tutorial-parent-client-javafx</artifactId>
-        <version>3.0.4.GA</version>
+        <version>3.1.0.M1</version>
     </parent>
 
     <artifactId>tutorial-feed-client-javafx</artifactId>
-    <version>3.0.4.GA</version>
+    <version>3.1.0.M1</version>
     <packaging>jar</packaging>
     <name>GraniteDS Feed Tutorial - JavaFX Client</name>
 
