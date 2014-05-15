@@ -67,7 +67,7 @@ The client model class is generated using the GDS +ant+ task named +gfx+ (Genera
 ----
 <plugins>
     <plugin>
-include::https://raw.github.com/graniteds-tutorials/graniteds-tutorial/master/client-javafx/pom.xml[tags=maven-generate]
+include::https://raw.githubusercontent.com/graniteds-tutorials/graniteds-tutorial/master/client-javafx/pom.xml[tags=maven-generate]
     ...
     </plugin>
 </plugins>
@@ -79,6 +79,6 @@ and server class names.
 Finally, here are the maven dependencies for the Java module:
 [source,xml,indent=0]
 ----
-include::https://raw.github.com/graniteds-tutorials/graniteds-tutorial/master/client-java-base/pom.xml[tags=maven-deps]
-include::https://raw.github.com/graniteds-tutorials/graniteds-tutorial/master/client-java-base/client-javafx/pom.xml[tags=maven-deps]
+include::https://raw.githubusercontent.com/graniteds-tutorials/graniteds-tutorial/master/client-java-base/pom.xml[tags=maven-deps]
+include::https://raw.githubusercontent.com/graniteds-tutorials/graniteds-tutorial/master/client-java-base/client-javafx/pom.xml[tags=maven-deps]
 ----

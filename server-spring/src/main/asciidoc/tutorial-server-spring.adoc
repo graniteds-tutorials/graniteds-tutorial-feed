@@ -78,5 +78,5 @@ to send it. The destination and subtopic should match what the client has subscr
 Finally, here are the maven dependencies for the Spring module:
 [source,xml,indent=0]
 ----
-include::https://raw.github.com/graniteds-tutorials/graniteds-tutorial/master/server-base/server-spring/pom.xml[tags=maven-deps]
+include::https://raw.githubusercontent.com/graniteds-tutorials/graniteds-tutorial/master/server-base/server-spring/pom.xml[tags=maven-deps]
 ----

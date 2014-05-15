@@ -55,7 +55,7 @@ Here is how to use it in the module +pom.xml+:
 ----
 <plugins>
     <plugin>
-include::https://raw.github.com/graniteds-tutorials/graniteds-tutorial/master/client-flex/pom.xml[tags=maven-generate]
+include::https://raw.githubusercontent.com/graniteds-tutorials/graniteds-tutorial/master/client-flex/pom.xml[tags=maven-generate]
     ...
     </plugin>
 </plugins>
@@ -79,7 +79,7 @@ Finally here are the necessary maven dependencies and definitions to build the A
 [source,xml,indent=0]
 .client-air/pom.xml
 ----
-include::https://raw.github.com/graniteds-tutorials/graniteds-tutorial/master/client-flex/pom.xml[tags=maven-deps]
+include::https://raw.githubusercontent.com/graniteds-tutorials/graniteds-tutorial/master/client-flex/pom.xml[tags=maven-deps]
 
-include::https://raw.github.com/graniteds-tutorials/graniteds-tutorial/master/client-flex/pom.xml[tags=maven-build-air]
+include::https://raw.githubusercontent.com/graniteds-tutorials/graniteds-tutorial/master/client-flex/pom.xml[tags=maven-build-air]
 ----
