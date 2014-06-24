@@ -28,12 +28,12 @@
     <parent>
         <groupId>org.graniteds.tutorials</groupId>
         <artifactId>tutorial-parent-server-ejb</artifactId>
-        <version>3.1.0.M1</version>
+        <version>3.1.0.RC1</version>
     </parent>
 
     <artifactId>tutorial-feed-server-ejb</artifactId>
     <packaging>war</packaging>
-    <version>3.1.0.M1</version>
+    <version>3.1.0.RC1</version>
     <name>GraniteDS Feed Tutorial - EJB Server</name>
 
     <properties>
@@ -46,7 +46,7 @@
         <dependency>
             <groupId>org.graniteds.tutorials</groupId>
             <artifactId>tutorial-feed-server-model</artifactId>
-            <version>3.1.0.M1</version>
+            <version>3.1.0.RC1</version>
         </dependency>
     </dependencies>
 

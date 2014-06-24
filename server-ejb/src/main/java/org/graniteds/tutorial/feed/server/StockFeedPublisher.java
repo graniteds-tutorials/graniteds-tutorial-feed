@@ -32,7 +32,6 @@ public class StockFeedPublisher {
     // tag::server-publish[]
     @Schedule(second="*/1", minute="*", hour="*", persistent=false)
     public void publish() {
-        System.out.println("Publish message");
         for (int i = 0; i < stockPrices.length; i++) {
             double inc = random.nextDouble()-0.5;
             stockPrices[i].setPrice(stockPrices[i].getPrice().add(new BigDecimal(inc)));

@@ -31,8 +31,6 @@
 
         private function init():void {
             Spring.getInstance().initApplication(); // <1>
-            
-            serverSession.serverApp = new SimpleServerApp();
 			
             feedConsumer = serverSession.getConsumer("feedTopic", "NASDAQ"); // <2>
 

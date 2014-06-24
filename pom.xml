@@ -28,11 +28,11 @@
     <parent>
         <groupId>org.graniteds.tutorials</groupId>
         <artifactId>tutorial-parent</artifactId>
-        <version>3.1.0.M1</version>
+        <version>3.1.0.RC1</version>
     </parent>
 
     <artifactId>tutorial-feed</artifactId>
-    <version>3.1.0.M1</version>
+    <version>3.1.0.RC1</version>
     <packaging>pom</packaging>
     <name>GraniteDS Feed Tutorial</name>
 
