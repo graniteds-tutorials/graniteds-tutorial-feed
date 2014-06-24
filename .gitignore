@@ -10,3 +10,4 @@ build/
 */.settings/org.eclipse.jdt*
 */.settings/.jsdt*
 *.versionsBackup
+*.log
