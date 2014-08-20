@@ -79,5 +79,5 @@ mvn clean install asciidoctor:process-asciidoc -Dserver=cdi -Dclient=air
 ----
 
 Each time you launch one of the above build, a dedicated documentation is generated in
-+target/docs/graniteds-tutorial-helloworld.html+. Refer to this document to know how to run the sample application
++target/docs/graniteds-tutorial-feed.html+. Refer to this document to know how to run the sample application
 and how its source code is designed.
