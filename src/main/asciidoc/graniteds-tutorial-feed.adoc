@@ -118,11 +118,11 @@ java -jar target/jfx/app/feed.jar
 endif::[]
 
 ifeval::["{client}" == "flex"]
-To run the Flex client, browse http://localhost:8080/feed/feed.swf[^]
+To run the Flex client, browse http://localhost:8080/feed/[^]
 endif::[]
 
 ifeval::["{client}" == "air"]
-Install and run the +.air+ package built in +target/feed.air+.
+Install and run the +.air+ package built in +client-air/target/feed.air+.
 endif::[]
 
 NOTE: To run the tutorial for another combination of client and server technologies, redo everything from the start
