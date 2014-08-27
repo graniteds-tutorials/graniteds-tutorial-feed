@@ -28,12 +28,12 @@
     <parent>
         <groupId>org.graniteds.tutorials</groupId>
         <artifactId>tutorial-parent</artifactId>
-        <version>3.1.0.RC1</version>
+        <version>3.1.0.GA</version>
     </parent>
 
     <artifactId>tutorial-feed-server-model</artifactId>
     <packaging>jar</packaging>
-    <version>3.1.0.RC1</version>
+    <version>3.1.0.GA</version>
     <name>GraniteDS Feed Tutorial - Server Model</name>
 	
     <properties>
