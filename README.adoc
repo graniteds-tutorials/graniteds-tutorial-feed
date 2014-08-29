@@ -22,13 +22,19 @@ The first step is to clone this git repository from the command line:
 git clone http://github.com/graniteds-tutorials/graniteds-tutorial-feed.git
 ----
 
-Next +cd+ in the tutorial folder and build the project and tutorial document:
+Next +cd+ in the tutorial folder and build the project and tutorial document (see next section for other options):
 
 ----
 cd graniteds-tutorial-feed
 
 mvn clean install asciidoctor:process-asciidoc -Dserver=spring -Dclient=java
 ----
+
+Finally, each time you launch one of the above build, a dedicated documentation is generated in
++target/docs/graniteds-tutorial-feed.html+. Refer to this document to know how to run the sample application
+and how its source code is designed.
+
+== Available Server / Client Configurations
 
 The available options for the server are:
 
@@ -78,6 +84,3 @@ mvn clean install asciidoctor:process-asciidoc -Dserver=ejb -Dclient=air
 mvn clean install asciidoctor:process-asciidoc -Dserver=cdi -Dclient=air
 ----
 
-Each time you launch one of the above build, a dedicated documentation is generated in
-+target/docs/graniteds-tutorial-feed.html+. Refer to this document to know how to run the sample application
-and how its source code is designed.
